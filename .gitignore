@@ -11,3 +11,6 @@
 
 #terraform lock file
 .terraform.lock.hcl
+
+# terraform provider
+provider.tf
