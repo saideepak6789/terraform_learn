@@ -6,7 +6,7 @@
 *.tfstate.*
 
 #terraform variable files may include senstivity data
-*.tfvars
+#*.tfvars
 
 
 #terraform lock file
