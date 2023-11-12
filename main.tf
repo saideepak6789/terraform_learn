@@ -1,8 +1,4 @@
-variable "vpc_cidr_block" {  }
-variable "subnet_cidr_block"{  }
-variable "avail_zone"{}
-variable "env_prefix" {}
-variable "myip" {}
+
 resource "aws_vpc" "development_vpc" {
     cidr_block = var.vpc_cidr_block
     tags = {
