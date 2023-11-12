@@ -38,6 +38,20 @@ resource "aws_route_table" "myapp-route-table" {
   }
 }
 
+
+#by using default route table 
+/*
+resource "aws_default_route_table" "main-rt" {
+  default_route_table_id = aws_vpc.development_vpc.default_route_table_id
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.myapp-igw.id
+  }
+  tags = {
+      Name = "${var.env_prefix}-main-Route-table"
+  }
+}
+*/
 resource "aws_route_table_association" "associate-to-RT" {
   subnet_id      = aws_subnet.dev_subnet-1.id
   route_table_id = aws_route_table.myapp-route-table.id
