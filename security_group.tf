@@ -25,6 +25,6 @@ resource "aws_security_group" "my-app-sg" {
   }
 
   tags = {
-    Name = "${var.env_prefix}-dev-sg"
+    Name = "${var.env_prefix}-sg"
   }
 }
