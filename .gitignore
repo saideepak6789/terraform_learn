@@ -1,4 +1,4 @@
-#local terrafrom 
+#local terrafrom  folder
 .terraform/*
 
 #terrform state file
