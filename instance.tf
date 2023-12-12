@@ -6,6 +6,15 @@ resource "aws_instance" "myapp-ec2"{
     availability_zone = var.avail_zone
     associate_public_ip_address = true
     key_name = var.keyname
+    user_data = <<EOF
+                    #!/bin/bash
+                    sudo yum update -y
+                    sudo yum install docker -y
+                    sudo systemctl start docker
+                    sudo usermod -aG docker ec2-user
+                    docker pull nginx
+                    docker run -idt -p 8080:80 nginx 
+                EOF    
     tags = {
         Name = "${var.env_prefix}-instance"
     }
